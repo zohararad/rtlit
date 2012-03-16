@@ -1,4 +1,4 @@
-# Artieller
+# RTLit
 
 CSS left-to-right to right-to-left converter.
 
@@ -8,7 +8,7 @@ Takes CSS, LESS, SASS files and converts them from a left-to-right orientation t
 
 Add this line to your application's Gemfile:
 
-    gem 'artieller'
+    gem 'rtlit'
 
 And then execute:
 
@@ -16,42 +16,42 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install artieller
+    $ gem install rtlit
 
 ## Usage
 
-You can use Artieller in one of three ways
+You can use RTLit in one of three ways
 
 ### In your code
 
-Include Artieller in your application and convert any CSS string to RTL
+Include RTLit in your application and convert any CSS string to RTL
 
-    require 'artieller'
+    require 'rtlit'
 
     ltr_css = File.open('/path/to/ltr/file.css','r') { |f| f.read }
-    rtl_css = Artieller::Converter.to_rtl ltr_css
+    rtl_css = RTLit::Converter.to_rtl ltr_css
 
 ### As a Rake task
 
-Convert a single file with Artieller
+Convert a single file with RTLit
 
-    rake artieller:convert[/path/to/src.css,/path/to/dest.css]
+    rake rtlit:convert[/path/to/src.css,/path/to/dest.css]
 
-Convert a directory with Artieller
+Convert a directory with RTLit
 
-    rake artieller:convert[/path/to/src/,/path/to/dest/]
+    rake rtlit:convert[/path/to/src/,/path/to/dest/]
 
 Convert files in a directory filtered by extension
 
-    rake artieller:convert[/path/to/src/,/path/to/dest/, less] # will convert only *.less files in /path/to/src/
+    rake rtlit:convert[/path/to/src/,/path/to/dest/, less] # will convert only *.less files in /path/to/src/
 
 ### As a CLI command
 
-    $ artieller /path/to/src/file.css /path/to/dest/file-rtl.css # convert /path/to/src/file.css and output to /path/to/dest/file-rtl.css
+    $ rtlit /path/to/src/file.css /path/to/dest/file-rtl.css # convert /path/to/src/file.css and output to /path/to/dest/file-rtl.css
 
-    $ artieller /path/to/src /path/to/dest # convert all files in /path/to/src/ and output to /path/to/dest
+    $ rtlit /path/to/src /path/to/dest # convert all files in /path/to/src/ and output to /path/to/dest
 
-    $ artieller -x less /path/to/src /path/to/dest # convert only *.less files in /path/to/src/
+    $ rtlit -x less /path/to/src /path/to/dest # convert only *.less files in /path/to/src/
 
 ## Contributing
 

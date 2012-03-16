@@ -1,10 +1,10 @@
 #!/usr/bin/env ruby
 
 $LOAD_PATH.unshift File.dirname(__FILE__) + '/../lib'
-require 'artieller'
+require 'rtlit'
 require 'optparse'
 
-module Artieller
+module RTLit
 
   module CLI
 
@@ -17,7 +17,7 @@ module Artieller
 
         args = {}
         OptionParser.new do |opts|
-          opts.banner = "Usage: artieller [options]"
+          opts.banner = "Usage: rtlit [options]"
 
           opts.on("-x EXTENSION", "--ext EXTENSION", "Parse only files matching extension") do |ext|
             args[:ext] = ext
@@ -28,7 +28,7 @@ module Artieller
         args[:src] = ARGV[0]
         args[:dest] = ARGV[1]
 
-        Artieller::Util.process_file_or_directory(args[:src], args[:dest], args[:ext])
+        RTLit::Util.process_file_or_directory(args[:src], args[:dest], args[:ext])
 
       end
 
@@ -38,4 +38,4 @@ module Artieller
 
 end
 
-Artieller::CLI.to_rtl
+RTLit::CLI.to_rtl

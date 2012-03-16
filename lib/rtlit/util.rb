@@ -1,4 +1,4 @@
-module Artieller
+module RTLit
 
   module Util
 
@@ -11,7 +11,7 @@ module Artieller
       def process_file(src, dest)
         puts 'Reading %s' % src
         css = File.open(src,'r'){ |f| f.read }
-        rtl_css = Artieller::Converter.to_rtl css
+        rtl_css = RTLit::Converter.to_rtl css
         puts 'writing %s' % dest
         File.open(dest,'w'){ |f| f.write rtl_css }
       end
