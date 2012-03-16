@@ -1,5 +1,7 @@
-module RTLit
+module RTLit #nodoc
 
+  # CSS string LTR to RTL converter
+  #
   module Converter
 
     class << self
@@ -8,7 +10,7 @@ module RTLit
       # Accepts any valid CSS string.
       # Returns a CSS string.
       #
-      # @param [String, #read] css the css string to convert to RTL
+      # @param [String] css the css string to convert to RTL
       # @return [String] the RTL version of the css
       #
       # Example:
@@ -19,7 +21,7 @@ module RTLit
       #         padding-right: 10px;
       #       }"
       #
-      #     to_rtl(css)
+      #     rtl_css = to_rtl(css)
       #
       def to_rtl(css) ''
         place_holder = '|====|'
