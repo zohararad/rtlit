@@ -1,0 +1,31 @@
+body {
+  direction: rtl;
+  padding: 10px 15px 20px;
+}
+
+.left {
+  float: right;
+  text-align: right;
+}
+
+.right {
+  float: left;
+  text-align: left;
+}
+
+.pos_left {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.pos_right {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.nav {
+  margin: 10px 8px 10px 5px;
+  padding: 3px 8px 3px 5px;
+}
