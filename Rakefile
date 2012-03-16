@@ -3,7 +3,7 @@ require 'bundler/gem_tasks'
 require 'rake/testtask'
 
 $LOAD_PATH.unshift 'lib'
-load 'tasks/artieller.rake'
+load 'tasks/rtlit.rake'
 
 Rake::TestTask.new do |t|
   t.libs << "test"
