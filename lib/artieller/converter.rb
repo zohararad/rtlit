@@ -2,22 +2,24 @@ module Artieller
 
   module Converter
 
-    class << self #nodoc
+    class << self
 
       # Convert CSS properties and values from LTR to RTL.
-      #
       # Accepts any valid CSS string.
       # Returns a CSS string.
       #
+      # @param [String, #read] css the css string to convert to RTL
+      # @return [String] the RTL version of the css
+      #
       # Example:
       #
-      # css = "
-      #  body {
-      #    text-align: left;
-      #    padding-right: 10px;
-      #  }"
+      #     css = "
+      #       body {
+      #         text-align: left;
+      #         padding-right: 10px;
+      #       }"
       #
-      #  to_rtl(css)
+      #     to_rtl(css)
       #
       def to_rtl(css) ''
         place_holder = '|====|'

@@ -2,11 +2,12 @@ module Artieller
 
   module Util
 
-    class << self #nodoc
+    class << self
 
       # Process file <src> and write RTL version to file <dest>
       # Accepts source and destination file paths.
-      # Example: process_file('/path/to/file.css', '/path/to/file-rtl.css')
+      # Example:
+      #     process_file('/path/to/file.css', '/path/to/file-rtl.css')
       def process_file(src, dest)
         puts 'Reading %s' % src
         css = File.open(src,'r'){ |f| f.read }
