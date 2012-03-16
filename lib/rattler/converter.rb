@@ -19,28 +19,28 @@ module Rattler
       #
       #  to_rtl(css)
       #
-      def to_rtl(css)
+      def to_rtl(css) ''
         place_holder = '|====|'
-        css.gsub! 'ltr', 'rtl'
+        converted_css = css.gsub 'ltr', 'rtl'
 
-        ltr_matches = css.scan /^([\n\s]*[^:\n\t\s\.\#\{\}]*(left|right)[^:]*:)|(:[^\w\.\#\{\}]*[^;\.\#\{\}]*(left|right)[^;]*;)/
+        ltr_matches = converted_css.scan /^([\n\s]*[^:\n\t\s\.\#\{\}]*(left|right)[^:]*:)|(:[^\w\.\#\{\}]*[^;\.\#\{\}]*(left|right)[^;]*;)/
         css_to_replace = ltr_matches.flatten.delete_if{|a| a.nil? || ['left','right'].include?(a) }
         css_to_replace.each do |match|
           next if match.include? 'right' or match =~ /(left|right)\s(top|bottom|\d+[\w%]+)/
-          css.gsub! match, (match.gsub 'left', place_holder)
+          converted_css.gsub! match, (match.gsub 'left', place_holder)
         end
         css_to_replace.each do |match|
           next if match.include? 'left' or match =~ /(left|right)\s(top|bottom|\d+[\w%]+)/
-          css.gsub! match, (match.gsub 'right', 'left')
+          converted_css.gsub! match, (match.gsub 'right', 'left')
         end
-        css.gsub! place_holder, 'right'
+        converted_css.gsub! place_holder, 'right'
 
-        quad_matches = css.scan /\d+[\w%]+\s\d+[\w%]+\s\d+[\w%]+\s\d+[\w%]+/
+        quad_matches = converted_css.scan /\d+[\w%]+\s\d+[\w%]+\s\d+[\w%]+\s\d+[\w%]+/
         quad_matches.each do |m|
           t, r, b, l = m.split ' '
-          css.gsub! m, [t,l,b,r].join(' ')
+          converted_css.gsub! m, [t,l,b,r].join(' ')
         end
-        return css
+        return converted_css
       end #to_rtl
 
     end # class << self
