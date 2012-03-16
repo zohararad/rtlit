@@ -6,7 +6,7 @@ Gem::Specification.new do |gem|
   gem.email         = ["zohar@zohararad.com"]
   gem.description   = %q{Converts CSS files from left-to-right to right-to-left}
   gem.summary       = %q{CSS left-to-right to right-to-left converter}
-  gem.homepage      = "https://github.com/zohararad/rattler"
+  gem.homepage      = ""
 
   gem.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   gem.files         = `git ls-files`.split("\n")
