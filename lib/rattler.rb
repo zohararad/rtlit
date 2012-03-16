@@ -1,5 +1,3 @@
-require "rattler/version"
-
-module Rattler
-  # Your code goes here...
-end
+require 'rattler/converter'
+require 'rattler/util'
+require 'rattler/version'

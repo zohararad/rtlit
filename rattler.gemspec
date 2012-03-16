@@ -4,8 +4,8 @@ require File.expand_path('../lib/rattler/version', __FILE__)
 Gem::Specification.new do |gem|
   gem.authors       = ["Zohar Arad"]
   gem.email         = ["zohar@zohararad.com"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
+  gem.description   = %q{Converts CSS files from left-to-right to right-to-left}
+  gem.summary       = %q{CSS left-to-right to right-to-left converter}
   gem.homepage      = ""
 
   gem.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
