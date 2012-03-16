@@ -1,4 +1,4 @@
 source 'https://rubygems.org'
 
-# Specify your gem's dependencies in rattler.gemspec
+# Specify your gem's dependencies in artieller.gemspec
 gemspec

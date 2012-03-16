@@ -1,6 +1,6 @@
 $LOAD_PATH.unshift File.dirname(__FILE__) + '/../lib'
 require 'test/unit'
-require 'rattler'
+require 'artieller'
 
 class FileConversion < Test::Unit::TestCase
 
@@ -14,7 +14,7 @@ class FileConversion < Test::Unit::TestCase
     path = File.dirname(__FILE__)
     ltr_css = File.open(File.join(path,'assets/ltr.css'),'r'){ |f| f.read }
     rtl_css = File.open(File.join(path,'assets/rtl.css'),'r'){ |f| f.read }
-    converted_css = Rattler::Converter.to_rtl ltr_css
+    converted_css = Artieller::Converter.to_rtl ltr_css
     assert_equal rtl_css, converted_css, 'file conversion failed'
   end
 

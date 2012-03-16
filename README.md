@@ -1,4 +1,4 @@
-# Rattler
+# Artieller
 
 CSS left-to-right to right-to-left converter.
 
@@ -8,7 +8,7 @@ Takes CSS, LESS, SASS files and converts them from a left-to-right orientation t
 
 Add this line to your application's Gemfile:
 
-    gem 'rattler'
+    gem 'artieller'
 
 And then execute:
 
@@ -16,42 +16,42 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install rattler
+    $ gem install artieller
 
 ## Usage
 
-You can use Rattler in one of three ways
+You can use Artieller in one of three ways
 
 ### In your code
 
-Include Rattler in your application and convert any CSS string to RTL
+Include Artieller in your application and convert any CSS string to RTL
 
-    require 'rattler'
+    require 'artieller'
 
     ltr_css = File.open('/path/to/ltr/file.css','r') { |f| f.read }
-    rtl_css = Rattler::Converter.to_rtl ltr_css
+    rtl_css = Artieller::Converter.to_rtl ltr_css
 
 ### As a Rake task
 
-Convert a single file with Rattler
+Convert a single file with Artieller
 
-    rake rattler:convert[/path/to/src.css,/path/to/dest.css]
+    rake artieller:convert[/path/to/src.css,/path/to/dest.css]
 
-Convert a directory with Rattler
+Convert a directory with Artieller
 
-    rake rattler:convert[/path/to/src/,/path/to/dest/]
+    rake artieller:convert[/path/to/src/,/path/to/dest/]
 
 Convert files in a directory filtered by extension
 
-    rake rattler:convert[/path/to/src/,/path/to/dest/, less] # will convert only *.less files in /path/to/src/
+    rake artieller:convert[/path/to/src/,/path/to/dest/, less] # will convert only *.less files in /path/to/src/
 
 ### As a CLI command
 
-    $ rattler /path/to/src/file.css /path/to/dest/file-rtl.css # will convert /path/to/src/file.css and output to /path/to/dest/file-rtl.css
+    $ artieller /path/to/src/file.css /path/to/dest/file-rtl.css # convert /path/to/src/file.css and output to /path/to/dest/file-rtl.css
 
-    $ rattler /path/to/src /path/to/dest # will convert all files in /path/to/src/ and output to /path/to/dest
+    $ artieller /path/to/src /path/to/dest # convert all files in /path/to/src/ and output to /path/to/dest
 
-    $ rattler -x less /path/to/src /path/to/dest # will convert only *.less files in /path/to/src/
+    $ artieller -x less /path/to/src /path/to/dest # convert only *.less files in /path/to/src/
 
 ## Contributing
 
