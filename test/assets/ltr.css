@@ -11,6 +11,7 @@ body {
 .right {
   float: right;
   text-align: right;
+  margin: @mTop @mRight @mBottom 20px;
 }
 
 .pos_left {
