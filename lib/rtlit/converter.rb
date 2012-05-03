@@ -39,9 +39,10 @@ module RTLit #nodoc
         end
         converted_css.gsub! place_holder, 'right'
 
-        #quad_matches = converted_css.scan /-?\d+(?:px|pt|em|%)+|@\w+\s+-?\d+(?:px|pt|em|%)+\s+-?\d+(?:px|pt|em|%)+\s+-?\d+(?:px|pt|em|%)+/
-        quad_matches = converted_css.scan /[\-\d\w\@\%]+\s+[\-\d\w\@\%]+\s+[\-\d\w\@\%]+\s+[\-\d\w\@\%]+/
-        quad_matches.each do |m|
+        quad_matches = converted_css.scan /(-?\d+(?:px|pt|em|%)+|@\w+)\s+(-?\d+(?:px|pt|em|%)+|@\w+)\s+(-?\d+(?:px|pt|em|%)+|@\w+)\s+(-?\d+(?:px|pt|em|%)+|@\w+)/
+        #quad_matches = converted_css.scan /[\-\d\w\@\%]+\s+[\-\d\w\@\%]+\s+[\-\d\w\@\%]+\s+[\-\d\w\@\%]+/
+        quad_matches.each do |ar|
+          m = ar.join(' ')
           t, r, b, l = m.split ' '
           converted_css.gsub! m, [t,l,b,r].join(' ')
         end
