@@ -4,6 +4,8 @@ CSS left-to-right to right-to-left converter.
 
 Takes CSS, LESS, SASS files and converts them from a left-to-right orientation to a right-to-left orientation. Useful when trying to convert English / Latin / LTR based stylesheets to support RTL languages like Hebrew / Arabic.
 
+Please also see [![rtlit API Documentation](https://www.omniref.com/ruby/gems/rtlit.png)](https://www.omniref.com/ruby/gems/rtlit)
+
 ## Installation
 
 Add this line to your application's Gemfile:
